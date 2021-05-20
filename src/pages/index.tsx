@@ -1,6 +1,8 @@
 import Head from "next/head";
 import { GetServerSideProps } from "next";
 
+import { useSession } from "next-auth/client";
+
 import { ExperienceBar } from "../components/ExperienceBar";
 import { Profile } from "../components/Profile";
 import { CompletedChallenges } from "../components/CompletedChallenges";
@@ -12,6 +14,8 @@ import { ChallengesProvider } from "../contexts/ChallengesContext";
 
 import styles from "./../styles/pages/Home.module.css";
 
+import Redirect from "./../components/Redirect";
+
 interface HomeProps {
   level: number;
   currentExperience: number;
@@ -19,6 +23,10 @@ interface HomeProps {
 }
 
 export default function Home(props: HomeProps) {
+  const [session] = useSession();
+
+  if (!session) return <Redirect to="/login" />;
+  console.log(session);
   return (
     <ChallengesProvider
       level={props.level}

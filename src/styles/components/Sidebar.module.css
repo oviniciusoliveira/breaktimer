@@ -1,0 +1,43 @@
+.container {
+  position: fixed;
+  height: 100%;
+  padding: 3rem 0;
+  background-color: var(--white);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  z-index: 1;
+}
+
+.container img {
+  width: 2rem;
+}
+
+.container nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.navItem,
+.navItemSelected {
+  padding: 0 2rem;
+  cursor: pointer;
+}
+
+.navItem {
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+}
+
+.navItemSelected {
+  border-right: 4px solid transparent;
+  border-left: 4px solid var(--blue);
+}
+
+.navItemSelected svg {
+  color: var(--blue);
+}

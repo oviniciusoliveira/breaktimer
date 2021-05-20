@@ -1,0 +1,8 @@
+.container button {
+  border: none;
+  background: transparent;
+}
+
+.container button svg {
+  color: var(--blue);
+}
