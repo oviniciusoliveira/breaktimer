@@ -1,7 +1,9 @@
 import { createContext, useState, ReactNode, useEffect } from "react";
-import Cookies from "js-cookie";
+// import Cookies from "js-cookie";
 import challenges from "./../../challenges.json";
 import { LevelUpModal } from "../components/LevelUpModal";
+import { useSession } from "next-auth/client";
+import axios from "axios";
 
 interface Challenge {
   type: "body" | "eye";
@@ -10,6 +12,8 @@ interface Challenge {
 }
 
 interface ChallengesContextData {
+  name: string;
+  profilePicture: string;
   level: number;
   currentExperience: number;
   challengesCompleted: number;
@@ -24,24 +28,22 @@ interface ChallengesContextData {
 
 interface ChallengesProviderProps {
   children: ReactNode;
-  level: number;
-  currentExperience: number;
-  challengesCompleted: number;
+  // level: number;
+  // currentExperience: number;
+  // challengesCompleted: number;
 }
 
 export const ChallengesContext = createContext({} as ChallengesContextData);
 
-export function ChallengesProvider({
-  children,
-  ...rest
-}: ChallengesProviderProps) {
-  const [level, setLevel] = useState(rest.level ?? 1);
-  const [currentExperience, setCurrentExperience] = useState(
-    rest.currentExperience ?? 0
-  );
-  const [challengesCompleted, setChallengesCompleted] = useState(
-    rest.challengesCompleted ?? 0
-  );
+export function ChallengesProvider({ children }: ChallengesProviderProps) {
+  const [session] = useSession();
+
+  const [name, setName] = useState("");
+  const [profilePicture, setProfilePicture] = useState("");
+  const [level, setLevel] = useState(1);
+  const [totalExperience, setTotalExperience] = useState(0);
+  const [currentExperience, setCurrentExperience] = useState(0);
+  const [challengesCompleted, setChallengesCompleted] = useState(0);
 
   const [activeChallenge, setActiveChallenge] = useState(null);
   const [isLevelUpModalOpen, setIsLevelUpModalOpen] = useState(false);
@@ -50,12 +52,26 @@ export function ChallengesProvider({
 
   useEffect(() => {
     Notification.requestPermission();
+    async function getUser() {
+      if (session) {
+        const { data } = await axios.post("api/server/user", {
+          userId: session.userId,
+        });
+        setName(data.name);
+        setProfilePicture(data.image);
+        setLevel(data.level);
+        setCurrentExperience(data.currentExperience);
+        setChallengesCompleted(data.challengesCompleted);
+        setTotalExperience(data.totalExperience);
+      }
+    }
+    getUser();
   }, []);
 
   useEffect(() => {
-    Cookies.set("level", String(level));
-    Cookies.set("currentExperience", String(currentExperience));
-    Cookies.set("challengesCompleted", String(challengesCompleted));
+    // Cookies.set("level", String(level));
+    // Cookies.set("currentExperience", String(currentExperience));
+    // Cookies.set("challengesCompleted", String(challengesCompleted));
   }, [level, currentExperience, challengesCompleted]);
 
   function levelUp() {
@@ -75,7 +91,7 @@ export function ChallengesProvider({
     new Audio("/notification.mp3").play();
 
     if (Notification.permission === "granted") {
-      new Notification("Break Time! Você tem um novo desafio 🎉", {
+      new Notification("BreakTime! Você tem um novo desafio 🎉", {
         body: `Valendo ${challenge.amount}xp`,
       });
     }
@@ -100,11 +116,25 @@ export function ChallengesProvider({
     setCurrentExperience(finalExperience);
     setActiveChallenge(null);
     setChallengesCompleted(challengesCompleted + 1);
+    setTotalExperience(totalExperience + amount);
+    updateUser();
+  }
+
+  async function updateUser() {
+    await axios.post("api/server/updateUser", {
+      userId: session.userId,
+      level,
+      currentExperience,
+      totalExperience,
+      challengesCompleted,
+    });
   }
 
   return (
     <ChallengesContext.Provider
       value={{
+        name,
+        profilePicture,
         level,
         currentExperience,
         challengesCompleted,

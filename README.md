@@ -1,8 +1,13 @@
 # BreakTimer
 
 - [X] Login com GitHub oAuth
+- [X] Integração com MongoDB
+  - [X] Rota para cadastrar novo usuário
+  - [X] Rota para buscar usuário existente
+  - [X] Rota para atualizar usuário existente
+  - [X] Rota para buscar todos usuários existentes
 - [ ] Sidebar
-  - [ ] Home
+  - [X] Home
   - [ ] Rankings
   - [X] Logout
   - [ ] ToggleTheme

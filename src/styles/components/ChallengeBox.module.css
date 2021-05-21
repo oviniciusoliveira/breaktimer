@@ -99,13 +99,21 @@
 }
 
 .challengeActive footer button.challengeFailedButton {
+  color: var(--red);
+  background-color: var(--red-light);
+}
+
+.challengeActive footer button.challengeFailedButton:hover {
+  color: var(--white);
   background-color: var(--red);
 }
 
 .challengeActive footer button.challengeSucceededButton {
-  background-color: var(--green);
+  color: var(--green);
+  background-color: var(--green-light);
 }
 
-.challengeActive footer button:hover {
-  filter: brightness(0.9);
+.challengeActive footer button.challengeSucceededButton:hover {
+  color: var(--white);
+  background-color: var(--green);
 }

@@ -16,22 +16,21 @@ import styles from "./../styles/pages/Home.module.css";
 
 import Redirect from "./../components/Redirect";
 
-interface HomeProps {
-  level: number;
-  currentExperience: number;
-  challengesCompleted: number;
-}
+// interface HomeProps {
+//   level: number;
+//   currentExperience: number;
+//   challengesCompleted: number;
+// }
 
-export default function Home(props: HomeProps) {
+export default function Home() {
   const [session] = useSession();
 
   if (!session) return <Redirect to="/login" />;
-  console.log(session);
   return (
     <ChallengesProvider
-      level={props.level}
-      currentExperience={props.currentExperience}
-      challengesCompleted={props.challengesCompleted}
+    // level={props.level}
+    // currentExperience={props.currentExperience}
+    // challengesCompleted={props.challengesCompleted}
     >
       <div className={styles.container}>
         <Head>
@@ -55,14 +54,14 @@ export default function Home(props: HomeProps) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { level, currentExperience, challengesCompleted } = context.req.cookies;
+// export const getServerSideProps: GetServerSideProps = async (context) => {
+//   const { level, currentExperience, challengesCompleted } = context.req.cookies;
 
-  return {
-    props: {
-      level: Number(level),
-      currentExperience: Number(currentExperience),
-      challengesCompleted: Number(challengesCompleted),
-    },
-  };
-};
+//   return {
+//     props: {
+//       level: Number(level),
+//       currentExperience: Number(currentExperience),
+//       challengesCompleted: Number(challengesCompleted),
+//     },
+//   };
+// };
