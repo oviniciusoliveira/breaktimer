@@ -1,2 +1,43 @@
 .container {
+  height: 100%;
+  max-width: 992px;
+
+  margin: 0 auto;
+  padding: 2.5rem 3rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.container h1 {
+  margin-bottom: 1rem;
+}
+
+.boardTitle {
+  width: 100%;
+  display: flex;
+  font-weight: 600;
+  text-transform: uppercase;
+  gap: 0.5rem;
+}
+
+.boardTitle p {
+    display: flex;
+    align-items: center;
+}
+
+.boardTitle .position {
+    width: 6rem;
+}
+
+.boardTitle .user {
+    flex-grow: 1;
+}
+
+.boardTitle .challenges{
+    width: 10rem;
+}
+
+.boardTitle .experience{
+    width: 10rem;
 }

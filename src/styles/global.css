@@ -20,6 +20,7 @@ html {
   --blue-twitter: #2aa9e0;
   --login-background: #5965e0;
   --linear-gradient: 70, 80, 190;
+  --ranking-item-background: #ffffff;
 }
 
 html[data-theme="dark"] {

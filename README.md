@@ -8,7 +8,7 @@
   - [X] Rota para buscar todos usuários existentes
 - [ ] Sidebar
   - [X] Home
-  - [ ] Rankings
+  - [X] Rankings
   - [X] Logout
   - [ ] ToggleTheme
 - [ ] Compartilhar no Twitter

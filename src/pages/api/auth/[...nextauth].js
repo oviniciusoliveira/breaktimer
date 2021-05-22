@@ -10,6 +10,7 @@ export default NextAuth({
       clientSecret: process.env.GITHUB_CLIENT_SECRET,
     }),
   ],
+  secret: process.env.AUTH_SECRET,
   callbacks: {
     async session(session, user) {
       const textToReplace = "https://avatars.githubusercontent.com/u/";

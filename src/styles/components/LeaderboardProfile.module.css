@@ -1,0 +1,73 @@
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  background-color: var(--ranking-item-background);
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+
+.userPosition {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  width: 5rem;
+  border-right: 5px solid var(--background);
+}
+
+.userProfile {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.userAvatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.userAvatar img {
+  width: 4.5rem;
+  border-radius: 50%;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-left: 1rem;
+}
+
+.userName {
+  font-size: 1.1rem;
+}
+
+.userLevel p {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.userChallenges {
+  display: flex;
+  width: 10rem;
+}
+
+.userChallenges p span {
+    color: var(--blue);
+}
+
+.userExperience {
+    display: flex;
+    width: 10rem;
+}
+
+.userExperience p span {
+    color: var(--blue);
+}
