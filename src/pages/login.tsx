@@ -31,7 +31,7 @@ export default function Login() {
           <button
             type="button"
             className={styles.githubLogin}
-            onClick={() => signIn()}
+            onClick={() => signIn("github")}
           >
             <span>Logar com Github</span>
             <div>
