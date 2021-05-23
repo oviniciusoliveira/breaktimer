@@ -6,8 +6,6 @@ import styles from "./../styles/components/Profile.module.css";
 export function Profile() {
   const { level } = useContext(ChallengesContext);
   const [session] = useSession();
-  console.log("session profile", session);
-  console.log("userid", session.userId);
 
   return (
     <div className={styles.profileContainer}>

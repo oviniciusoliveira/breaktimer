@@ -8,5 +8,6 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
 
   const user = await db.collection("breaktimer").findOne({ userId });
 
+
   return response.status(201).json(user);
 };

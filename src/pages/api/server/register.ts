@@ -16,5 +16,6 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
     challengesCompleted: 0,
     registeredAt: Date.now(),
   });
+
   return response.status(201).json({ message: "success" });
 };

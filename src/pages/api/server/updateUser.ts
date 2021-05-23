@@ -10,14 +10,7 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
     challengesCompleted,
   } = request.body;
 
-  console.log(
-    "atualizar usuario: ",
-    userId,
-    level,
-    currentExperience,
-    totalExperience,
-    challengesCompleted
-  );
+
 
   const db = await connectToDatabase(process.env.MONGODB_URI);
 
@@ -32,8 +25,6 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
       },
     }
   );
-
-  console.log("user atualizado: ", user);
 
   return response.status(201).json(user);
 };

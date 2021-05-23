@@ -28,7 +28,6 @@ export default function Ranking() {
             : 1;
         });
         setUsers(data);
-        console.log(users);
       }
     }
     getUsers();

@@ -116,13 +116,7 @@ export function ChallengesProvider({ children }: ChallengesProviderProps) {
     setActiveChallenge(null);
     setChallengesCompleted((challenges) => challenges + 1);
     setTotalExperience((experience) => experience + amount);
-    console.log(
-      "dados:",
-      currentExperience,
-      level,
-      totalExperience,
-      challengesCompleted
-    );
+ 
     updateUser(
       newLevel,
       finalExperience,

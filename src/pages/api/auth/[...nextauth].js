@@ -34,7 +34,6 @@ export default NextAuth({
         });
       }
 
-      console.log("userid: ", session.userId);
 
       return session;
     },
