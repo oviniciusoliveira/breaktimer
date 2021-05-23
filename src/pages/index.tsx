@@ -39,32 +39,33 @@ export default function Home() {
     }
   }, [activeChallenge]);
 
-  if (!session) return <Redirect to="/login" />;
+  if(!session) return <Redirect to="/login" />
+
   return (
-    <ChallengesProvider
-    // level={props.level}
-    // currentExperience={props.currentExperience}
-    // challengesCompleted={props.challengesCompleted}
-    >
-      <div className={styles.container}>
-        <Head>
-          <title>Início | BreakTimer</title>
-        </Head>
-        <ExperienceBar />
-        <CountdownProvider>
-          <section>
-            <div>
-              <Profile />
-              <CompletedChallenges />
-              <Countdown />
-            </div>
-            <div>
-              <ChallengeBox />
-            </div>
-          </section>
-        </CountdownProvider>
-      </div>
-    </ChallengesProvider>
+      <ChallengesProvider
+      // level={props.level}
+      // currentExperience={props.currentExperience}
+      // challengesCompleted={props.challengesCompleted}
+      >
+        <div className={styles.container}>
+          <Head>
+            <title>Início | BreakTimer</title>
+          </Head>
+          <ExperienceBar />
+          <CountdownProvider>
+            <section>
+              <div>
+                <Profile />
+                <CompletedChallenges />
+                <Countdown />
+              </div>
+              <div>
+                <ChallengeBox />
+              </div>
+            </section>
+          </CountdownProvider>
+        </div>
+      </ChallengesProvider>
   );
 }
 
