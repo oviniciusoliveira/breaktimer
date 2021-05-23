@@ -2,6 +2,8 @@
   display: flex;
   align-items: center;
   margin-bottom: 3rem;
+
+  color: var(--headings);
 }
 
 .experienceBar span {

@@ -6,16 +6,16 @@
 </g>
 <defs>
 <linearGradient id="paint0_linear" x1="301.555" y1="0" x2="301.555" y2="660" gradientUnits="userSpaceOnUse">
-<stop stop-opacity="0"/>
-<stop offset="1"/>
+<stop stop-color="white" stop-opacity="0"/>
+<stop offset="1" stop-color="white"/>
 </linearGradient>
 <linearGradient id="paint1_linear" x1="562.771" y1="0" x2="562.771" y2="518.4" gradientUnits="userSpaceOnUse">
-<stop stop-opacity="0"/>
-<stop offset="1"/>
+<stop stop-color="white" stop-opacity="0"/>
+<stop offset="1" stop-color="white"/>
 </linearGradient>
 <linearGradient id="paint2_linear" x1="69.2288" y1="0" x2="69.2288" y2="518.4" gradientUnits="userSpaceOnUse">
-<stop stop-opacity="0"/>
-<stop offset="1"/>
+<stop stop-color="white" stop-opacity="0"/>
+<stop offset="1" stop-color="white"/>
 </linearGradient>
 </defs>
 </svg>

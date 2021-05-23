@@ -8,7 +8,9 @@ export default function LogoFull() {
         src="/logo-white.svg"
         alt="Logo BreakTimer"
       />
-      <span className={styles.logoTitle}>BreakTimer</span>
+      <span className={styles.logoTitle}>
+        Break<span style={{ color: `var(--green)` }}>.</span>Timer
+      </span>
     </div>
   );
 }

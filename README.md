@@ -6,16 +6,11 @@
   - [X] Rota para buscar usuário existente
   - [X] Rota para atualizar usuário existente
   - [X] Rota para buscar todos usuários existentes
-- [ ] Sidebar
+- [X] Sidebar
   - [X] Home
   - [X] Rankings
   - [X] Logout
-  - [ ] ToggleTheme
-- [ ] Compartilhar no Twitter
+  - [X] ToggleTheme
   
-- [ ] Tema Dark
-- [ ] Responsividade
-- [ ] Documentação
-
-
-- [ ] Next PWA
+- [X] Tema Dark
+- [X] Responsividade

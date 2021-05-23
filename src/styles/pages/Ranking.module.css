@@ -11,6 +11,7 @@
 
 .container h1 {
   margin-bottom: 1rem;
+  color: var(--title);
 }
 
 .boardTitle {
@@ -19,6 +20,7 @@
   font-weight: 600;
   text-transform: uppercase;
   gap: 0.5rem;
+  color: var(--headings);
 }
 
 .boardTitle p {

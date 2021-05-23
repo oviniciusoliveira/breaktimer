@@ -3,9 +3,10 @@
   display: flex;
   align-items: center;
 
-  background-color: var(--ranking-item-background);
+  background-color: var(--whiteBlack);
   border-radius: 5px;
   margin-top: 1rem;
+  color: var(--headings);
 }
 
 .userPosition {
