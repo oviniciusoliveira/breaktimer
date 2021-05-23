@@ -79,6 +79,8 @@
   }
 
   .userExperience {
-    width: 5rem;
+    width: 8rem;
+    justify-content: flex-end;
+    padding: 0 1rem;
   }
 }

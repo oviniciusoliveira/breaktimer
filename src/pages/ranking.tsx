@@ -1,6 +1,6 @@
 import axios from "axios";
 import Head from "next/head";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import styles from "./../styles/pages/Ranking.module.css";
 import { LeaderboardProfile, User } from "./../components/LeaderboardProfile";
 import { useSession } from "next-auth/client";
@@ -14,11 +14,15 @@ export default function Ranking() {
 
   const [isMobileSize, setIsMobileSize] = useState(false);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (window.innerWidth <= 720) {
       setIsMobileSize(true);
+    } else {
+      setIsMobileSize(false);
     }
+  }, [window.innerWidth]);
 
+  useEffect(() => {
     async function getUsers() {
       const { data } = await axios.post("/api/server/users");
       if (data.length > 0) {
