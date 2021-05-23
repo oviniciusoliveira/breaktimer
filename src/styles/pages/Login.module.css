@@ -3,6 +3,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  max-height: 95%;
 }
 
 .container {
@@ -78,4 +79,11 @@
 
 .githubLogin div svg {
     width: 1rem;
+}
+
+@media (max-width: 1100px) {
+  .container {
+    justify-content: center;
+  }
+
 }

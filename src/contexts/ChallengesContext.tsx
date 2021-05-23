@@ -102,11 +102,10 @@ export function ChallengesProvider({ children }: ChallengesProviderProps) {
   }
 
   function completeChallenge() {
-    if (!activeChallenge) return;
-
     const { amount } = activeChallenge;
 
     let finalExperience = currentExperience + amount;
+    let newLevel = level + 1;
 
     if (finalExperience >= experienceToNextLevel) {
       finalExperience = finalExperience - experienceToNextLevel;
@@ -115,12 +114,29 @@ export function ChallengesProvider({ children }: ChallengesProviderProps) {
 
     setCurrentExperience(finalExperience);
     setActiveChallenge(null);
-    setChallengesCompleted(challengesCompleted + 1);
-    setTotalExperience(totalExperience + amount);
-    updateUser();
+    setChallengesCompleted((challenges) => challenges + 1);
+    setTotalExperience((experience) => experience + amount);
+    console.log(
+      "dados:",
+      currentExperience,
+      level,
+      totalExperience,
+      challengesCompleted
+    );
+    updateUser(
+      newLevel,
+      finalExperience,
+      totalExperience + amount,
+      challengesCompleted + 1
+    );
   }
 
-  async function updateUser() {
+  async function updateUser(
+    level: number,
+    currentExperience: number,
+    totalExperience: number,
+    challengesCompleted: number
+  ) {
     await axios.post("api/server/updateUser", {
       userId: session.userId,
       level,

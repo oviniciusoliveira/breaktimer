@@ -17,13 +17,6 @@ interface LeaderboardProfileProps {
 }
 
 export function LeaderboardProfile({ user, rank }: LeaderboardProfileProps) {
-  const [isMobileSize, setIsMobileSize] = useState(false);
-
-  useEffect(() => {
-    if (window.innerWidth <= 550) {
-      setIsMobileSize(true);
-    }
-  }, []);
   return (
     <>
       <div className={styles.container}>

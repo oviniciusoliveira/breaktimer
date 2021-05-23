@@ -117,3 +117,13 @@
   color: var(--white);
   background-color: var(--green);
 }
+
+@media (max-width: 1200px) {
+  .challengeBoxContainer  {
+    min-height: 400px;
+  }
+
+  .challengeActive, .challengeNotActive {
+    gap: 2rem;
+  }
+}

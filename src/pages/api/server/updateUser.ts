@@ -10,6 +10,15 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
     challengesCompleted,
   } = request.body;
 
+  console.log(
+    "atualizar usuario: ",
+    userId,
+    level,
+    currentExperience,
+    totalExperience,
+    challengesCompleted
+  );
+
   const db = await connectToDatabase(process.env.MONGODB_URI);
 
   const user = await db.collection("breaktimer").updateOne(

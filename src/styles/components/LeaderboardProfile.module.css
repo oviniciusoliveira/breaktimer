@@ -28,7 +28,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 1rem;
+  margin-left: 1.5rem;
 }
 
 .userAvatar img {
@@ -60,14 +60,24 @@
 }
 
 .userChallenges p span {
-    color: var(--blue);
+  color: var(--blue);
 }
 
 .userExperience {
-    display: flex;
-    width: 10rem;
+  display: flex;
+  width: 10rem;
 }
 
 .userExperience p span {
-    color: var(--blue);
+  color: var(--blue);
+}
+
+@media (max-width: 720px) {
+  .userChallenges {
+    display: none;
+  }
+
+  .userExperience {
+    width: 5rem;
+  }
 }

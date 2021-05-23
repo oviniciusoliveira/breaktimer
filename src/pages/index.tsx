@@ -10,11 +10,15 @@ import { Countdown } from "../components/Countdown";
 import { ChallengeBox } from "../components/ChallengeBox";
 
 import { CountdownProvider } from "../contexts/CountdownContext";
-import { ChallengesProvider } from "../contexts/ChallengesContext";
+import {
+  ChallengesContext,
+  ChallengesProvider,
+} from "../contexts/ChallengesContext";
 
 import styles from "./../styles/pages/Home.module.css";
 
 import Redirect from "./../components/Redirect";
+import { useContext, useEffect, useState } from "react";
 
 // interface HomeProps {
 //   level: number;
@@ -24,6 +28,16 @@ import Redirect from "./../components/Redirect";
 
 export default function Home() {
   const [session] = useSession();
+  const { activeChallenge } = useContext(ChallengesContext);
+  const [position, setPosition] = useState(0);
+
+  useEffect(() => {
+    if (activeChallenge) {
+      setPosition(1);
+    } else {
+      setPosition(2);
+    }
+  }, [activeChallenge]);
 
   if (!session) return <Redirect to="/login" />;
   return (

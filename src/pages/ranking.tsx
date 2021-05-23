@@ -12,7 +12,13 @@ export default function Ranking() {
 
   const [users, setUsers] = useState<User[]>([]);
 
+  const [isMobileSize, setIsMobileSize] = useState(false);
+
   useEffect(() => {
+    if (window.innerWidth <= 720) {
+      setIsMobileSize(true);
+    }
+
     async function getUsers() {
       const { data } = await axios.post("/api/server/users");
       if (data.length > 0) {
@@ -36,10 +42,18 @@ export default function Ranking() {
       <div className={styles.container}>
         <h1>Classificação</h1>
         <div className={styles.boardTitle}>
-          <div className={styles.position}><p>Posição</p></div>
-          <div className={styles.user}><p>Usuário</p></div>
-          <div className={styles.challenges}><p>Desafios</p></div>
-          <div className={styles.experience}><p>Experiência</p></div>
+          <div className={styles.position}>
+            <p>Posição</p>
+          </div>
+          <div className={styles.user}>
+            <p>Usuário</p>
+          </div>
+          <div className={styles.challenges}>
+            <p>Desafios</p>
+          </div>
+          <div className={styles.experience}>
+            <p>{isMobileSize ? " Exp" : " Experiência"}</p>
+          </div>
         </div>
         {users &&
           users.map((user, index) => (

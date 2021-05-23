@@ -24,6 +24,7 @@
 
 .navItem,
 .navItemSelected {
+  display: flex;
   padding: 0 2rem;
   cursor: pointer;
 }
@@ -45,4 +46,43 @@
 
 .navItemSelected svg {
   color: var(--blue);
+}
+
+@media (max-width: 1200px) {
+  .container {
+    width: 100%;
+    height: 70px;
+    padding: 0 1rem;
+    bottom: 0;
+
+    flex-direction: row;
+  }
+
+  .container nav {
+    flex-direction: row;
+    height: 100%;
+    gap: 1.5;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navItem,
+  .navItemSelected {
+    border-left: none;
+    border-bottom: 4px solid transparent;
+    padding: 0;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .navItem {
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+  }
+
+  .navItemSelected {
+    border-top: 4px solid var(--blue);
+  }
 }
