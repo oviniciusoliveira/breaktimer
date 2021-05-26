@@ -13,7 +13,11 @@
 </p>
 
 <h1 align="center">
+<<<<<<< HEAD
   <a href="https://breaktimer.vercel.app/">
+=======
+  <a href="https://happet.netlify.app/">
+>>>>>>> 49a86d97af0b6ad5947767d6e09989289f2e68f5
       <img src="./.github/breaktimer.png" />
   </a>
 </h1>
