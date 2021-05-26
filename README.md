@@ -45,9 +45,9 @@ A técnica de Pomodoro consiste em você dividir seu tempo de estudo e trabalho 
 Cada bloco é conhecido como um pomodoro, onde você aplica foco total em sua atividade, após o tempo acabar, você descansa por um breve período, tradicionalmente 5 minutos, e após isso retorna à atividade.
 
 ### 🎲 Como funciona o Break.Timer?
-Você conta com um contador regressivo que inicia em 25 minutos para marcar seu tempo de pomodoro.
+Na páina inicial há um contador regressivo que inicia em 25 minutos para marcar seu tempo de pomodoro.
 
-Após o tempo acabar, iremos te indicar um exercício para realizar, pode ser um alongamento físico, ou um relaxamento aos seus olhos. Caso você consiga concluir o desafio, ganhará uma certa quantidade de pontos de experiência.
+Após o tempo acabar, iremos te indicar um exercício para realizar, pode ser um alongamento físico ou um relaxamento aos seus olhos. Caso você consiga concluir o desafio, ganhará uma certa quantidade de pontos de experiência.
 
 Conforme você for acumulando experiência, seu nível irá aumentar e você poderá ver sua colocação no ranking global, que inclui todos os usuários do Break.Timer.
 
