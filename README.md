@@ -203,7 +203,7 @@ Para manipular o código, recomendo utilizar o [VSCode](https://code.visualstudi
 
 ## 📝 Licença
 
-Este projeto esta sob a licença [MIT](./LICENSE).
+Este projeto está sob a licença [MIT](./LICENSE).
 
 Feito com 💙 por Vinícius Oliveira [👋 Entre em contato!](https://www.linkedin.com/in/oviniciusoliveira/)
 
